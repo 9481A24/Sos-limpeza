@@ -6,23 +6,19 @@
 <title>Lar em Dia Soluções</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;font-family:Arial,sans-serif;overflow-x:hidden;}
 
+/* FUNDO */
 body{
-  font-family:Arial,sans-serif;
   background:white;
   text-align:center;
 }
 
-/* BARRA SUPERIOR */
+/* NAV - borda fina no topo */
 nav{
   position:fixed;
-  top:0;
-  left:0;
+  top:0; left:0;
   width:100%;
   height:6px;
   background:#FF8C00;
@@ -37,24 +33,22 @@ nav{
   width:100%;
   margin-top:40px;
 }
-
-/* AQUI VOCÊ PODE ALTERAR A LARGURA DA LOGO SEM LIMITES */
 .logo-centro img{
-  width:600px;      /* altere para aumentar/diminuir */
-  max-width:none;   /* remove limite de largura */
+  width:500px;      /* tamanho desejado da logo */
+  max-width:none;   /* sem limite */
   height:auto;      /* mantém proporção */
+  display:block;
 }
 
 /* HERO */
 .hero{
   padding:30px 20px;
+  margin-top:20px;
 }
-
 .hero h1{
   font-size:1.8em;
   margin-bottom:15px;
 }
-
 .hero p{
   font-size:1.1em;
   margin-bottom:20px;
@@ -72,16 +66,12 @@ nav{
   margin:10px 0;
   box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
-
-.btn:hover{
-  opacity:0.9;
-}
+.btn:hover{opacity:0.9;}
 
 /* PLANOS */
 .planos{
   padding:30px 15px;
 }
-
 .plano{
   background:#f4f4f4;
   margin:20px auto;
@@ -90,32 +80,21 @@ nav{
   max-width:400px;
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-
-.plano h2{
-  margin-bottom:10px;
-}
-
+.plano h2{margin-bottom:10px;}
 .preco{
   color:#FF8C00;
   font-size:1.5em;
   font-weight:bold;
   margin-bottom:15px;
 }
-
-.plano p{
-  margin:8px 0;
-}
+.plano p{margin:8px 0;}
 
 /* DIFERENCIAL */
 .diferencial{
   padding:30px 20px;
   background:#fff8f0;
 }
-
-.diferencial h3{
-  margin-bottom:15px;
-}
-
+.diferencial h3{margin-bottom:15px;}
 .diferencial p{
   margin:8px 0;
   font-size:1.1em;
@@ -125,10 +104,7 @@ nav{
 .condominio{
   padding:30px 20px;
 }
-
-.condominio h3{
-  margin-bottom:10px;
-}
+.condominio h3{margin-bottom:10px;}
 
 /* BOTÃO WHATSAPP FIXO */
 .whatsapp-btn{
@@ -149,7 +125,6 @@ nav{
   justify-content:center;
   animation: pulse3 1.5s ease-in-out 3;
 }
-
 @keyframes pulse3{
   0%,100%{transform:scale(1);}
   25%{transform:scale(1.1);}
@@ -170,7 +145,7 @@ footer{
 
 <nav></nav>
 
-<!-- LOGO CENTRAL GRANDE -->
+<!-- LOGO CENTRAL -->
 <div class="logo-centro">
   <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/c86e46a1-66a6-4a1a-a054-8479a532d118-wm.png" alt="Lar em Dia Soluções">
 </div>
@@ -179,14 +154,11 @@ footer{
 <div class="hero">
   <h1>Plano Mensal de Limpeza com Cheiro de Casa Nova</h1>
   <p>Organização, confiança e tranquilidade toda semana.</p>
-  <a class="btn" href="https://wa.me/5531995439612" target="_blank">
-    QUERO AGENDAR PELO WHATSAPP
-  </a>
+  <a class="btn" href="https://wa.me/5531995439612" target="_blank">QUERO AGENDAR PELO WHATSAPP</a>
 </div>
 
 <!-- PLANOS -->
 <div class="planos">
-
   <div class="plano">
     <h2>Plano Essencial</h2>
     <div class="preco">R$600/mês</div>
@@ -207,10 +179,7 @@ footer{
     <p>✔️ Relatório com fotos</p>
   </div>
 
-  <a class="btn" href="https://wa.me/5531995439612" target="_blank">
-    GARANTIR MINHA VAGA
-  </a>
-
+  <a class="btn" href="https://wa.me/5531995439612" target="_blank">GARANTIR MINHA VAGA</a>
 </div>
 
 <!-- DIFERENCIAL -->
@@ -230,9 +199,7 @@ footer{
 </div>
 
 <!-- BOTÃO WHATSAPP FIXO -->
-<a class="whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">
-  Falar com profissional
-</a>
+<a class="btn whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">Falar com profissional</a>
 
 <footer>
 CNPJ: 59.711.008/0001-09 – Jeová-Jiré
@@ -240,3 +207,5 @@ CNPJ: 59.711.008/0001-09 – Jeová-Jiré
 
 </body>
 </html>
+
+  
