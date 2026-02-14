@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lar em Dia Soluções</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:white;
+  text-align:center;
+}
+
+/* BARRA SUPERIOR */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:6px;
+  background:#FF8C00;
+  z-index:1000;
+}
+
+/* LOGO CENTRAL GRANDE */
+.logo-centro{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  margin-top:40px;
+}
+
+/* AQUI VOCÊ PODE ALTERAR A LARGURA DA LOGO SEM LIMITES */
+.logo-centro img{
+  width:600px;      /* altere para aumentar/diminuir */
+  max-width:none;   /* remove limite de largura */
+  height:auto;      /* mantém proporção */
+}
+
+/* HERO */
+.hero{
+  padding:30px 20px;
+}
+
+.hero h1{
+  font-size:1.8em;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:1.1em;
+  margin-bottom:20px;
+}
+
+/* BOTÃO */
+.btn{
+  display:inline-block;
+  background:#25D366;
+  color:white;
+  padding:15px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:10px 0;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn:hover{
+  opacity:0.9;
+}
+
+/* PLANOS */
+.planos{
+  padding:30px 15px;
+}
+
+.plano{
+  background:#f4f4f4;
+  margin:20px auto;
+  padding:20px;
+  border-radius:10px;
+  max-width:400px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.plano h2{
+  margin-bottom:10px;
+}
+
+.preco{
+  color:#FF8C00;
+  font-size:1.5em;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.plano p{
+  margin:8px 0;
+}
+
+/* DIFERENCIAL */
+.diferencial{
+  padding:30px 20px;
+  background:#fff8f0;
+}
+
+.diferencial h3{
+  margin-bottom:15px;
+}
+
+.diferencial p{
+  margin:8px 0;
+  font-size:1.1em;
+}
+
+/* CONDOMÍNIO */
+.condominio{
+  padding:30px 20px;
+}
+
+.condominio h3{
+  margin-bottom:10px;
+}
+
+/* BOTÃO WHATSAPP FIXO */
+.whatsapp-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:white;
+  font-weight:bold;
+  font-size:1em;
+  padding:15px 20px;
+  border-radius:30px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  z-index:9999;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation: pulse3 1.5s ease-in-out 3;
+}
+
+@keyframes pulse3{
+  0%,100%{transform:scale(1);}
+  25%{transform:scale(1.1);}
+  50%{transform:scale(1);}
+  75%{transform:scale(1.1);}
+}
+
+/* RODAPÉ */
+footer{
+  background:#f4f4f4;
+  padding:15px;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<nav></nav>
+
+<!-- LOGO CENTRAL GRANDE -->
+<div class="logo-centro">
+  <img src="https://raw.githubusercontent.com/9481A24/Logomarca/main/c86e46a1-66a6-4a1a-a054-8479a532d118-wm.png" alt="Lar em Dia Soluções">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Plano Mensal de Limpeza com Cheiro de Casa Nova</h1>
+  <p>Organização, confiança e tranquilidade toda semana.</p>
+  <a class="btn" href="https://wa.me/5531995439612" target="_blank">
+    QUERO AGENDAR PELO WHATSAPP
+  </a>
+</div>
+
+<!-- PLANOS -->
+<div class="planos">
+
+  <div class="plano">
+    <h2>Plano Essencial</h2>
+    <div class="preco">R$600/mês</div>
+    <p>✔️ 1x por semana</p>
+    <p>✔️ Limpeza completa</p>
+    <p>✔️ Cheiro agradável</p>
+    <p>✔️ Profissional uniformizada</p>
+    <p>✔️ Checklist de qualidade</p>
+  </div>
+
+  <div class="plano">
+    <h2>Plano Premium</h2>
+    <div class="preco">R$1.000/mês</div>
+    <p>✔️ 2x por semana</p>
+    <p>✔️ Organização detalhada</p>
+    <p>✔️ Cheiro exclusivo</p>
+    <p>✔️ Atendimento prioritário</p>
+    <p>✔️ Relatório com fotos</p>
+  </div>
+
+  <a class="btn" href="https://wa.me/5531995439612" target="_blank">
+    GARANTIR MINHA VAGA
+  </a>
+
+</div>
+
+<!-- DIFERENCIAL -->
+<div class="diferencial">
+  <h3>Nosso Diferencial</h3>
+  <p>✨ Não é faxina comum</p>
+  <p>✨ Padrão profissional</p>
+  <p>✨ Cheiro agradável que marca presença</p>
+  <p>✨ Atendimento organizado e seguro</p>
+</div>
+
+<!-- CONDOMÍNIO -->
+<div class="condominio">
+  <h3>Atendimento para Condomínios</h3>
+  <p>Condições especiais para moradores do mesmo prédio.</p>
+  <p>Se 5 apartamentos fecharem juntos, desconto exclusivo.</p>
+</div>
+
+<!-- BOTÃO WHATSAPP FIXO -->
+<a class="whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">
+  Falar com profissional
+</a>
+
+<footer>
+CNPJ: 59.711.008/0001-09 – Jeová-Jiré
+</footer>
+
+</body>
+</html>
