@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,13 +9,12 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;font-family:Arial,sans-serif;overflow-x:hidden;}
 
-/* FUNDO */
 body{
   background:white;
   text-align:center;
 }
 
-/* NAV - borda fina no topo */
+/* NAV */
 nav{
   position:fixed;
   top:0; left:0;
@@ -26,7 +24,7 @@ nav{
   z-index:1000;
 }
 
-/* LOGO CENTRAL GRANDE */
+/* LOGO */
 .logo-centro{
   display:flex;
   justify-content:center;
@@ -36,7 +34,6 @@ nav{
 }
 .logo-centro img{
   width:500px;
-  max-width:none;
   height:auto;
   display:block;
 }
@@ -55,7 +52,7 @@ nav{
   margin-bottom:20px;
 }
 
-/* BOTÃO */
+/* BOTÕES */
 .btn{
   display:inline-block;
   background:#25D366;
@@ -67,12 +64,21 @@ nav{
   margin:10px 0;
   box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
-.btn:hover{opacity:0.9;}
+
+.btn-depoimentos{
+  display:inline-block;
+  background:#FF8C00;
+  color:white;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:10px;
+}
 
 /* PLANOS */
-.planos{
-  padding:30px 15px;
-}
+.planos{ padding:30px 15px; }
+
 .plano{
   background:#f4f4f4;
   margin:20px auto;
@@ -82,65 +88,92 @@ nav{
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 .plano h2{margin-bottom:10px;}
+
 .preco{
   color:#FF8C00;
   font-size:1.5em;
   font-weight:bold;
   margin-bottom:15px;
 }
-.plano p{margin:8px 0;}
 
 /* DIFERENCIAL */
 .diferencial{
-  padding:30px 20px;
+  padding:40px 20px;
   background:#fff8f0;
 }
-.diferencial h3{margin-bottom:15px;}
-.diferencial p{
-  margin:8px 0;
-  font-size:1.1em;
+
+.itens-diferencial{
+  margin-top:20px;
 }
 
-/* DEPOIMENTOS CARROSSEL YOUTUBE */
-.depoimentos-carrossel {
+.item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:10px 0;
+  font-size:1.05em;
+}
+
+.icone{
+  font-size:1.4em;
+}
+
+.selo-confianca{
+  margin-top:20px;
+  background:#25D366;
+  color:white;
+  padding:10px;
+  border-radius:8px;
+  font-weight:bold;
+  display:inline-block;
+}
+
+/* CARROSSEL */
+.depoimentos-carrossel{
   padding:30px 20px;
   background:#f9f9f9;
-  text-align:center;
-}
-.depoimentos-carrossel h3 {
-  font-size:1.5em;
-  color:#FF8C00;
-  margin-bottom:20px;
 }
 
-.carousel-container {
+.carousel-container{
   overflow:hidden;
   max-width:350px;
   margin:0 auto;
   border-radius:10px;
   box-shadow:0 4px 12px rgba(0,0,0,0.2);
-  touch-action: pan-x;
 }
 
-.carousel-slide {
+.carousel-slide{
   display:flex;
-  transition: transform 1s ease-in-out;
+  transition:transform 0.6s ease-in-out;
 }
 
-.carousel-video {
+.carousel-video{
   flex:0 0 100%;
   height:200px;
   border-radius:10px;
-  object-fit:cover;
 }
 
 /* CONDOMÍNIO */
 .condominio{
-  padding:30px 20px;
+  padding:40px 20px;
+  background:linear-gradient(135deg,#FF8C00,#FFA500);
+  color:white;
+  margin-top:30px;
 }
-.condominio h3{margin-bottom:10px;}
 
-/* BOTÃO WHATSAPP FIXO */
+.btn-condominio{
+  display:inline-block;
+  margin-top:15px;
+  background:white;
+  color:#FF8C00;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* WHATSAPP FIXO */
 .whatsapp-btn{
   position:fixed;
   bottom:20px;
@@ -148,22 +181,11 @@ nav{
   background:linear-gradient(135deg,#25D366,#128C7E);
   color:white;
   font-weight:bold;
-  font-size:1em;
   padding:15px 20px;
   border-radius:30px;
   box-shadow:0 4px 12px rgba(0,0,0,0.4);
   z-index:9999;
   text-decoration:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  animation: pulse3 1.5s ease-in-out 3;
-}
-@keyframes pulse3{
-  0%,100%{transform:scale(1);}
-  25%{transform:scale(1.1);}
-  50%{transform:scale(1);}
-  75%{transform:scale(1.1);}
 }
 
 /* RODAPÉ */
@@ -175,12 +197,9 @@ footer{
 
 /* RESPONSIVO */
 @media(max-width:768px){
-  .carousel-container{
-    max-width:90%;
-  }
-  .carousel-video{
-    height:150px;
-  }
+  .carousel-container{ max-width:90%; }
+  .carousel-video{ height:160px; }
+  .logo-centro img{ width:90%; }
 }
 </style>
 </head>
@@ -189,28 +208,28 @@ footer{
 
 <nav></nav>
 
-<!-- LOGO CENTRAL -->
 <div class="logo-centro">
-  <img src="https://raw.githubusercontent.com/9481A24/Sos-limpeza/main/7578523b-e66e-4099-959e-2a949cb3a7d6-wm.png" alt="Lar em Dia Soluções">
+  <img src="https://raw.githubusercontent.com/9481A24/Sos-limpeza/main/7578523b-e66e-4099-959e-2a949cb3a7d6-wm.png">
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <h1>Plano Mensal de Limpeza com Cheiro de Casa Nova</h1>
   <p>Organização, confiança e tranquilidade toda semana.</p>
-  <a class="btn" href="https://wa.me/5531995439612" target="_blank">QUERO AGENDAR PELO WHATSAPP</a>
+  <a class="btn" href="https://wa.me/5531995439612" target="_blank">
+    QUERO AGENDAR PELO WHATSAPP
+  </a>
+  <br>
+  <a href="#depoimentos" class="btn-depoimentos">
+    Ver Depoimentos
+  </a>
 </div>
 
-<!-- PLANOS -->
 <div class="planos">
   <div class="plano">
     <h2>Plano Essencial</h2>
     <div class="preco">R$600/mês</div>
     <p>✔️ 1x por semana</p>
     <p>✔️ Limpeza completa</p>
-    <p>✔️ Cheiro agradável</p>
-    <p>✔️ Profissional uniformizada</p>
-    <p>✔️ Checklist de qualidade</p>
   </div>
 
   <div class="plano">
@@ -218,52 +237,71 @@ footer{
     <div class="preco">R$1.000/mês</div>
     <p>✔️ 2x por semana</p>
     <p>✔️ Organização detalhada</p>
-    <p>✔️ Cheiro exclusivo</p>
-    <p>✔️ Atendimento prioritário</p>
-    <p>✔️ Relatório com fotos</p>
   </div>
-
-  <a class="btn" href="https://wa.me/5531995439612" target="_blank">GARANTIR MINHA VAGA</a>
 </div>
 
-<!-- DIFERENCIAL -->
 <div class="diferencial">
   <h3>Nosso Diferencial</h3>
-  <p>✨ Não é faxina comum</p>
-  <p>✨ Padrão profissional</p>
-  <p>✨ Cheiro agradável que marca presença</p>
-  <p>✨ Atendimento organizado e seguro</p>
+
+  <div class="itens-diferencial">
+    <div class="item">
+      <span class="icone">👩‍🔧</span>
+      <p>Profissionais treinadas e uniformizadas</p>
+    </div>
+
+    <div class="item">
+      <span class="icone">🧴</span>
+      <p>Produtos de qualidade</p>
+    </div>
+
+    <div class="item">
+      <span class="icone">⏰</span>
+      <p>Confiança e pontualidade</p>
+    </div>
+  </div>
+
+  <div class="selo-confianca">
+    ⭐ Empresa Regularizada – CNPJ Ativo
+  </div>
 </div>
 
-<!-- DEPOIMENTOS CARROSSEL YOUTUBE -->
-<div class="depoimentos-carrossel">
+<div class="depoimentos-carrossel" id="depoimentos">
   <h3>Depoimentos de Clientes</h3>
   <div class="carousel-container">
     <div class="carousel-slide">
-      <iframe class="carousel-video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1&autoplay=1&mute=1&loop=1&playlist=tgbNymZ7vqY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <iframe class="carousel-video" src="https://www.youtube.com/embed/sBws8MSXN7A?controls=1&autoplay=1&mute=1&loop=1&playlist=sBws8MSXN7A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <iframe class="carousel-video" src="https://www.youtube.com/embed/aqz-KE-bpKQ?controls=1&autoplay=1&mute=1&loop=1&playlist=aqz-KE-bpKQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      <iframe class="carousel-video" src="https://www.youtube.com/embed/YE7VzlLtp-4?controls=1&autoplay=1&mute=1&loop=1&playlist=YE7VzlLtp-4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe class="carousel-video"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY?mute=1"
+        frameborder="0" allowfullscreen></iframe>
+
+      <iframe class="carousel-video"
+        src="https://www.youtube.com/embed/sBws8MSXN7A?mute=1"
+        frameborder="0" allowfullscreen></iframe>
+
+      <iframe class="carousel-video"
+        src="https://www.youtube.com/embed/aqz-KE-bpKQ?mute=1"
+        frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
 
-<!-- CONDOMÍNIO -->
 <div class="condominio">
   <h3>Atendimento para Condomínios</h3>
-  <p>Condições especiais para moradores do mesmo prédio.</p>
-  <p>Se 5 apartamentos fecharem juntos, desconto exclusivo.</p>
+  <p>Planos especiais para moradores do mesmo condomínio.</p>
+  <a href="https://wa.me/5531995439612" target="_blank" class="btn-condominio">
+    Solicitar Proposta para Condomínio
+  </a>
 </div>
 
-<!-- BOTÃO WHATSAPP FIXO -->
-<a class="btn whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">Falar com profissional</a>
+<a class="whatsapp-btn"
+href="https://wa.me/5531995439612" target="_blank">
+Falar com profissional
+</a>
 
 <footer>
 CNPJ: 59.711.008/0001-09 – Jeová-Jiré
 </footer>
 
 <script>
-// CARROSSEL AUTOMÁTICO
 const slideContainer = document.querySelector('.carousel-slide');
 const slides = document.querySelectorAll('.carousel-video');
 let index = 0;
@@ -274,11 +312,11 @@ function nextSlide(){
   slideContainer.style.transform = `translateX(-${index * 100}%)`;
 }
 
-// Muda automaticamente a cada 7 segundos
-setInterval(nextSlide, 7000);
+setInterval(nextSlide, 3000);
 </script>
 
 </body>
 </html>
+
 
   
