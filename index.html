@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -34,9 +35,9 @@ nav{
   margin-top:40px;
 }
 .logo-centro img{
-  width:500px;      /* tamanho desejado da logo */
-  max-width:none;   /* sem limite */
-  height:auto;      /* mantém proporção */
+  width:500px;
+  max-width:none;
+  height:auto;
   display:block;
 }
 
@@ -100,6 +101,39 @@ nav{
   font-size:1.1em;
 }
 
+/* DEPOIMENTOS CARROSSEL YOUTUBE */
+.depoimentos-carrossel {
+  padding:30px 20px;
+  background:#f9f9f9;
+  text-align:center;
+}
+.depoimentos-carrossel h3 {
+  font-size:1.5em;
+  color:#FF8C00;
+  margin-bottom:20px;
+}
+
+.carousel-container {
+  overflow:hidden;
+  max-width:350px;
+  margin:0 auto;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  touch-action: pan-x;
+}
+
+.carousel-slide {
+  display:flex;
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-video {
+  flex:0 0 100%;
+  height:200px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
 /* CONDOMÍNIO */
 .condominio{
   padding:30px 20px;
@@ -137,6 +171,16 @@ footer{
   background:#f4f4f4;
   padding:15px;
   margin-top:30px;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .carousel-container{
+    max-width:90%;
+  }
+  .carousel-video{
+    height:150px;
+  }
 }
 </style>
 </head>
@@ -191,6 +235,19 @@ footer{
   <p>✨ Atendimento organizado e seguro</p>
 </div>
 
+<!-- DEPOIMENTOS CARROSSEL YOUTUBE -->
+<div class="depoimentos-carrossel">
+  <h3>Depoimentos de Clientes</h3>
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=1&autoplay=1&mute=1&loop=1&playlist=tgbNymZ7vqY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/sBws8MSXN7A?controls=1&autoplay=1&mute=1&loop=1&playlist=sBws8MSXN7A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/aqz-KE-bpKQ?controls=1&autoplay=1&mute=1&loop=1&playlist=aqz-KE-bpKQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/YE7VzlLtp-4?controls=1&autoplay=1&mute=1&loop=1&playlist=YE7VzlLtp-4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
 <!-- CONDOMÍNIO -->
 <div class="condominio">
   <h3>Atendimento para Condomínios</h3>
@@ -204,6 +261,22 @@ footer{
 <footer>
 CNPJ: 59.711.008/0001-09 – Jeová-Jiré
 </footer>
+
+<script>
+// CARROSSEL AUTOMÁTICO
+const slideContainer = document.querySelector('.carousel-slide');
+const slides = document.querySelectorAll('.carousel-video');
+let index = 0;
+
+function nextSlide(){
+  index++;
+  if(index >= slides.length) index = 0;
+  slideContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Muda automaticamente a cada 7 segundos
+setInterval(nextSlide, 7000);
+</script>
 
 </body>
 </html>
