@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -63,6 +64,7 @@ nav{
   font-weight:bold;
   margin:10px 0;
   box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  cursor:pointer;
 }
 
 .btn-depoimentos{
@@ -94,6 +96,18 @@ nav{
   font-size:1.5em;
   font-weight:bold;
   margin-bottom:15px;
+}
+
+/* FLEX FOTO ABAIXO DO CARD */
+.fotos-card{
+  display:flex;
+  justify-content:center;
+  margin-top:15px;
+}
+.fotos-card img{
+  width:90%;
+  max-width:350px;
+  border-radius:20px;
 }
 
 /* DIFERENCIAL */
@@ -173,7 +187,50 @@ nav{
   font-weight:bold;
 }
 
-/* WHATSAPP FIXO */
+/* POPUP FORMULÁRIO */
+#overlay{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:999;
+}
+#meuFormulario{
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#f2f2f2;
+  padding:30px;
+  border-radius:10px;
+  width:350px;
+  z-index:1000;
+  box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+#meuFormulario h2{
+  margin-bottom:20px;
+}
+#meuFormulario input{
+  width:100%;
+  padding:8px;
+  margin-bottom:10px;
+  box-sizing:border-box;
+}
+#meuFormulario button{
+  padding:10px 20px;
+  font-size:16px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+#enviarBtn{ background:#00cc66; color:white; margin-bottom:10px; }
+#fecharPopup{ background:#ff4444; color:white; margin-left:10px; }
+
+/* WHATSAPP FLUTUANTE */
 .whatsapp-btn{
   position:fixed;
   bottom:20px;
@@ -200,6 +257,7 @@ footer{
   .carousel-container{ max-width:90%; }
   .carousel-video{ height:160px; }
   .logo-centro img{ width:90%; }
+  .fotos-card img{ width:80%; }
 }
 </style>
 </head>
@@ -213,79 +271,84 @@ footer{
 </div>
 
 <div class="hero">
-  <h1>Plano Mensal de Limpeza com Cheiro de Casa Nova</h1>
-  <p>Organização, confiança e tranquilidade toda semana.</p>
-  <a class="btn" href="https://wa.me/5531995439612" target="_blank">
+  <h1>🎉 1 único vencedor ganhará 6 meses de faxina grátis (1 vez por mês)</h1>
+  <p> 🕒 A cada 1 hora de faxina R$39,90 = 1 cupom</p>
+  <p> 🏆 Ao atingir 320 horas totais será realizado o sorteio</p>
+  
+  <!-- BOTÃO HERO ABRINDO POPUP -->
+  <a class="btn" id="agendarBtn">
     QUERO AGENDAR PELO WHATSAPP
   </a>
   <br>
+  
   <a href="#depoimentos" class="btn-depoimentos">
     Ver Depoimentos
   </a>
 </div>
 
+<!-- PLANOS COMPLETOS -->
 <div class="planos">
   <div class="plano">
     <h2>Plano Essencial</h2>
-    <div class="preco">R$1200/mês</div>
-    <p>✔️ profissional treinada</p>
-    <p>✔️ 1 x por semana</p>
-    <p>✔️ material incluso</p>
+    <div class="preco">R$600/mês</div>
+    <p>✔️ 1x por semana</p>
     <p>✔️ Limpeza completa</p>
-    <p>✔️ + aromatizacao ambiente</p>
-   </div>
+    <div class="fotos-card">
+      <img src="https://github.com/9481A24/Logomarca/raw/main/pngtree-professional-cleaning-service-team-floor-background-picture-image_16824264.jpg" alt="Plano Essencial">
+    </div>
+  </div>
 
   <div class="plano">
     <h2>Plano Premium</h2>
-    <div class="preco">R$2.400,00/mês</div>
-    <p>✔️ profissional treinada</p>
-    <p>✔️ 2 x por semana</p>
-    <p>✔️ material incluso</p>
-    <p>✔️ limpeza completa</p>
-    <p>✔️ + aromatizacao ambiente</p>
-    <p>✔️ prioridade agendamento </p>
- </div>
-
+    <div class="preco"> </div>
+    <p>✔️ ✨ Faxina completa + aromatização da casa</p>
+    <p>✔️ 🎁 Brinde: Sacos de lixo do mês + Blind Kit exclusivo</p>
+    <div class="fotos-card">
+      <img src="https://github.com/9481A24/Logomarca/raw/main/pngtree-professional-cleaning-service-team-floor-background-picture-image_16824264.jpg" alt="Plano Premium">
+    </div>
+  </div>
 
   <div class="plano">
-    <h2>lavagem estofados</h2>
-    <div class="preco">R$330,00/mês</div>
-    <p>✔️ promoção 4 intes</p>
-    <p>✔️ sofa</p>
-    <p>✔️ traveseiro</p>
-    <p>✔️ poltrona</p>
-    <p>✔️ + aromatizacao</p>
-    
- </div>
-  
+    <h2>Lavagem Estofados</h2>
+    <div class="preco">R$1.000/mês</div>
+    <p>✔️ 2x por semana</p>
+    <p>✔️ Organização detalhada</p>
+    <div class="fotos-card">
+      <img src="https://github.com/9481A24/Logomarca/raw/main/pngtree-professional-cleaning-service-team-floor-background-picture-image_16824264.jpg" alt="Lavagem Estofados">
+    </div>
+  </div>
+
   <div class="plano">
     <h2>Limpeza por Hora</h2>
     <div class="preco">R$39,90/hora</div>
     <p>✔️ Você paga apenas pelo tempo utilizado</p>
     <p>✔️ Ideal para limpeza pontual</p>
-      <p>✔️ Profissional treinada</p>
     <p>✔️ Material incluso</p>
-    <p>✔️ limpeza completa</p>
-    <p>✔️ + aromatizacao ambiente</p>
+    <p>✔️ Profissional treinada</p>
     <p>✔️ Tempo mínimo: 3 horas</p>
+    <div class="fotos-card">
+      <img src="https://github.com/9481A24/Logomarca/raw/main/pngtree-professional-cleaning-service-team-floor-background-picture-image_16824264.jpg" alt="Limpeza por Hora">
+    </div>
   </div>
+</div>
+
+<div class="diferencial">
+  <h3>Nosso Diferencial</h3>
+  <div class="itens-diferencial">
+    <div class="item"><span class="icone">👩‍🔧</span><p>Profissionais treinadas e uniformizadas</p></div>
+    <div class="item"><span class="icone">🧴</span><p>Produtos de qualidade</p></div>
+    <div class="item"><span class="icone">⏰</span><p>Confiança e pontualidade</p></div>
+  </div>
+  <div class="selo-confianca">⭐ Empresa Regularizada – CNPJ Ativo</div>
 </div>
 
 <div class="depoimentos-carrossel" id="depoimentos">
   <h3>Depoimentos de Clientes</h3>
   <div class="carousel-container">
     <div class="carousel-slide">
-      <iframe class="carousel-video"
-        src="https://youtube.com/shorts/CtIngM7bYOI?si=lrtSrni21ZfLdZI1"
-        frameborder="0" allow="autoplay" allowfullscreen></iframe>
-
-      <iframe class="carousel-video"
-        src="https://www.youtube.com/embed/sBws8MSXN7A?mute=1&autoplay=1&playsinline=1"
-        frameborder="0" allow="autoplay" allowfullscreen></iframe>
-
-      <iframe class="carousel-video"
-        src="https://www.youtube.com/embed/aqz-KE-bpKQ?mute=1&autoplay=1&playsinline=1"
-        frameborder="0" allow="autoplay" allowfullscreen></iframe>
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/tgbNymZ7vqY?mute=1" frameborder="0" allowfullscreen></iframe>
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/sBws8MSXN7A?mute=1" frameborder="0" allowfullscreen></iframe>
+      <iframe class="carousel-video" src="https://www.youtube.com/embed/aqz-KE-bpKQ?mute=1" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -298,8 +361,23 @@ footer{
   </a>
 </div>
 
-<a class="whatsapp-btn"
-href="https://wa.me/5531995439612" target="_blank">
+<!-- POPUP FORMULÁRIO -->
+<div id="overlay"></div>
+<div id="meuFormulario">
+  <h2>Preencha seus dados</h2>
+  <form id="formulario">
+    <input type="text" name="nome" placeholder="Nome" required>
+    <input type="tel" name="celular" placeholder="Celular" required>
+    <input type="text" name="pix" placeholder="Chave Pix" required>
+    <input type="text" name="qrcode" placeholder="QR Code Pix" required>
+    <input type="text" name="codigo" placeholder="Código" required>
+    <button type="submit" id="enviarBtn">Enviar</button>
+    <button type="button" id="fecharPopup">Fechar</button>
+  </form>
+</div>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a class="whatsapp-btn" href="https://wa.me/5531995439612" target="_blank">
 Falar com profissional
 </a>
 
@@ -308,18 +386,63 @@ CNPJ: 59.711.008/0001-09 – Jeová-Jiré
 </footer>
 
 <script>
+// CARROSSEL
 const slideContainer = document.querySelector('.carousel-slide');
 const slides = document.querySelectorAll('.carousel-video');
 let index = 0;
-
 function nextSlide(){
   index++;
   if(index >= slides.length) index = 0;
   slideContainer.style.transform = `translateX(-${index * 100}%)`;
 }
-
 setInterval(nextSlide, 3000);
+
+// POPUP FORMULÁRIO HERO
+const botaoAgendar = document.getElementById("agendarBtn");
+const formularioDiv = document.getElementById("meuFormulario");
+const overlay = document.getElementById("overlay");
+const fecharBtn = document.getElementById("fecharPopup");
+
+botaoAgendar.addEventListener("click", function(e){
+  e.preventDefault();
+  overlay.style.display = "block";
+  formularioDiv.style.display = "block";
+});
+
+fecharBtn.addEventListener("click", function(){
+  overlay.style.display = "none";
+  formularioDiv.style.display = "none";
+});
+overlay.addEventListener("click", function(){
+  overlay.style.display = "none";
+  formularioDiv.style.display = "none";
+});
+
+// Envio do formulário
+const formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", function(e){
+  e.preventDefault();
+  const nome = formulario.nome.value;
+  const celular = formulario.celular.value;
+  const pix = formulario.pix.value;
+  const qrcode = formulario.qrcode.value;
+  const codigo = formulario.codigo.value;
+
+  alert(
+    "Dados enviados:\n" +
+    "Nome: " + nome + "\n" +
+    "Celular: " + celular + "\n" +
+    "Pix: " + pix + "\n" +
+    "QR Code: " + qrcode + "\n" +
+    "Código: " + codigo
+  );
+
+  formulario.reset();
+  overlay.style.display = "none";
+  formularioDiv.style.display = "none";
+});
 </script>
 
 </body>
 </html>
+
